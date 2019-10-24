@@ -14,5 +14,8 @@ Redmine::Plugin.register :issue_rating do
   author 'Stepan Golovko'
   description 'Plugin for issues rating'
   version '0.0.1'
-  permission :set_rating, issues: :set_rating
+
+  project_module :issue_rating do
+    permission :issue_rating, { :issue_rating => [:set_rating] },:public => true
+  end
 end
