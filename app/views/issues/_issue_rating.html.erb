@@ -1,0 +1,15 @@
+<h2><span id="rating" data-stars="<%= @issue.rating %>"></span></h2>
+
+<script>
+    $(function () {
+        $.ratePicker("#rating", {
+            rate : function (stars) {
+                $.ajax({
+                    type: "POST",
+                    url: "<%= set_rating_path(@issue)%>",
+                    data: { rating: stars },
+                })
+            }
+        });
+    });
+</script>
