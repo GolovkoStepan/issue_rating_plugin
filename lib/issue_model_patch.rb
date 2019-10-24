@@ -1,6 +1,6 @@
 require_dependency 'issue'
 
-module IssuePatch
+module IssueModelPatch
   def self.included(base)
     base.class_eval do
       validates :rating, numericality: {
@@ -13,4 +13,4 @@ module IssuePatch
   end
 end
 
-Issue.send(:include, IssuePatch)
+Issue.send(:include, IssueModelPatch)
