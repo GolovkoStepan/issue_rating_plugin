@@ -5,7 +5,7 @@
         $.ratePicker("#rating", {
             rate : function (stars) {
                 $.ajax({
-                    type: "GET",
+                    type: "POST",
                     url: "<%= set_rating_path(@issue)%>",
                     data: { rating: stars },
                 })
